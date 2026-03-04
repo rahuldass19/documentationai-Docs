@@ -1,0 +1,114 @@
+---
+title: Changelog
+description: Track the latest updates, features, and improvements in QWED-AI releases.
+---
+
+## Quick Access
+
+<Columns cols={2}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/QWED-AI/qwed-verification/releases" target="_blank">
+    View all releases and download assets.
+  </Card>
+  <Card title="PyPI Package" icon="package" href="https://pypi.org/project/qwed/" target="_blank">
+    Install the latest version via pip.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Subscribe to GitHub notifications or watch the repository to stay informed about new releases.
+</Callout>
+
+## Recent Updates
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Enhanced error tracking with real-time monitoring integration
+- Added comprehensive LLM integration support for popular models
+
+## Improvements
+
+- Optimized verification pipelines for `<50ms` average response times
+- Better handling of edge cases in output validation
+
+## Bug Fixes
+
+- Fixed intermittent failures in multi-threaded verification
+- Resolved compatibility issues with Python 3.12
+
+</Update>
+
+<Update label="2024-09-01" description="v1.1.0" tags={["feature"]}>
+
+## New Features
+
+- Introduced finance module for verifying financial calculations and outputs
+- Docker optimizations with multi-stage builds for smaller images
+
+## Improvements
+
+- Streamlined CLI interface for faster command execution
+- Added configurable logging levels
+
+</Update>
+
+<Update label="2024-07-15" description="v1.0.0" tags={["feature"]}>
+
+## Initial Release
+
+- Core verification engines for LLM output determinism
+- Basic CLI and Python SDK integration
+- Support for common verification protocols
+
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to upgrade your QWED-AI installation to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+
+    Verify your installed version:
+
+````bash
+pip show qwed
+````
+
+  </Step>
+  <Step title="Upgrade Package" icon="upload">
+
+    Use the package manager for your environment:
+
+    <CodeGroup tabs="pip,conda">
+````bash
+pip install --upgrade qwed
+````
+
+````bash
+conda update qwed
+````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Verify Installation" icon="check-circle">
+
+    Test the upgrade:
+
+````bash
+qwed --version
+qwed verify --help
+````
+
+  </Step>
+  <Step title="Review Changelog" icon="book-open">
+
+    Check release notes for breaking changes and migrate if needed.
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Always test in a staging environment before upgrading production deployments.
+</Callout>

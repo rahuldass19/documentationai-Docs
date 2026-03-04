@@ -1,0 +1,132 @@
+---
+title: Installation Guide
+description: Get QWED-AI up and running quickly with simple installation steps for Python environments and Docker deployment.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Requirements">
+Before installing QWED-AI, ensure you have:
+- Python 3.8 or higher
+- pip 21.0 or higher
+- Docker (for containerized deployment)
+- Git (optional, for cloning the repository)
+</Callout>
+
+Verify your Python version:
+
+````bash
+python --version
+````
+
+## Install via PyPI
+
+Use pip to install the `qwed` package directly from PyPI. This method is recommended for most users.
+
+<Steps>
+  <Step title="Create Virtual Environment" icon="terminal">
+    Create and activate a virtual environment to isolate dependencies.
+
+    <Tabs>
+      <Tab title="macOS/Linux" icon="apple">
+      ````bash
+      python -m venv qwed-env
+      source qwed-env/bin/activate
+      ````
+      </Tab>
+      <Tab title="Windows" icon="monitor">
+      ````bash
+      python -m venv qwed-env
+      qwed-env\Scripts\activate
+      ````
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Install QWED-AI" icon="download">
+    Install the latest version.
+
+    ````bash
+    pip install qwed
+    ````
+  </Step>
+
+  <Step title="Verify Installation" icon="check-circle">
+    Run a quick test to confirm everything works.
+
+    ````bash
+    qwed verify --help
+    ````
+
+    You should see the command-line help output.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+Upgrade to the latest version anytime with `pip install --upgrade qwed`.
+</Callout>
+
+## Docker Deployment
+
+For production or containerized environments, use Docker. This ensures consistent verification across systems.
+
+<CodeGroup tabs="Docker, Docker Compose">
+```dockerfile
+# Dockerfile example
+FROM python:3.10-slim
+RUN pip install qwed
+CMD ["qwed", "verify", "--help"]
+```
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  qwed:
+    image: python:3.10-slim
+    command: pip install qwed && qwed verify --help
+```
+</CodeGroup>
+
+Build and run:
+
+````bash
+docker build -t qwed-ai .
+docker run qwed-ai
+````
+
+## Test Your Installation
+
+Run a simple verification test on sample LLM output:
+
+````python
+from qwed import verify
+
+result = verify.llm_output("The sky is blue.", model="gpt-4")
+print(result.is_verified)  # True or False
+````
+
+<Callout kind="success">
+Success! QWED-AI is ready. Your output shows deterministic verification.
+</Callout>
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Build your first verification workflow.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API integrations.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Full endpoint documentation.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+- **pip install fails**: Update pip with `pip install --upgrade pip`.
+- **Docker permission error**: Use `sudo` or add your user to the docker group.
+- **Import error**: Ensure virtual environment is activated.
+
+For more help, check the [GitHub repository](https://github.com/QWED-AI/qwed-verification).
+</Expandable>

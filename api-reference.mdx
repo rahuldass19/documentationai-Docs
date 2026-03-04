@@ -1,0 +1,220 @@
+---
+title: API Reference
+description: Comprehensive reference for QWED-AI's classes, methods, and parameters to build custom verification workflows.
+---
+
+## Overview
+
+QWED-AI provides a robust REST API at `https://api.qwed.ai/v1` for verifying LLM outputs across math, logic, finance, and code domains. Use the Verifier class in the Python SDK for streamlined integration, or make direct HTTP calls. All endpoints require authentication via `Authorization: Bearer {YOUR_API_KEY}` header.
+
+<Callout kind="info">
+API keys are available in your dashboard at `https://dashboard.qwed.ai`. Rate limits apply: 100 requests per minute.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Math Verification" icon="calculator" href="#math-verification">
+    Prove arithmetic and algebraic statements.
+  </Card>
+  <Card title="Logic Verification" icon="brain" href="#logic-verification">
+    Validate logical reasoning chains.
+  </Card>
+  <Card title="Finance APIs" icon="dollar-sign" href="#finance-apis">
+    Verify financial calculations like NPV.
+  </Card>
+</Columns>
+
+## Authentication
+
+Authenticate requests with your API key.
+
+<ParamField header="Authorization" param-type="string" required="true">
+Bearer token obtained from dashboard.
+</ParamField>
+
+<ParamField header="Content-Type" param-type="string" required="true">
+`application/json`
+</ParamField>
+
+## Verifier Class (Python SDK)
+
+Install via PyPI: `pip install qwed`.
+
+```python
+from qwed import Verifier
+
+verifier = Verifier(api_key="{YOUR_API_KEY}")
+```
+
+### Initialization Parameters
+
+<ParamField path="api_key" param-type="string" required="true">
+Your QWED-AI API key.
+</ParamField>
+
+<ParamField path="base_url" param-type="string" required="false" default="https://api.qwed.ai/v1">
+Custom base URL for API endpoint.
+</ParamField>
+
+## Verification Endpoints
+
+### Math Verification
+
+Verify mathematical statements from LLM outputs.
+
+<Request tabs="Python,cURL" show-lines="true">
+  ```python
+  result = verifier.verify_math(
+      statement="2 + 2 = 4",
+      context="Basic arithmetic check"
+  )
+  print(result.is_valid)  # True
+  ```
+  ```bash
+  curl -X POST https://api.qwed.ai/v1/verify/math \
+    -H "Authorization: Bearer {YOUR_API_KEY}" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "statement": "2 + 2 = 4",
+      "context": "Basic arithmetic check"
+    }'
+  ```
+</Request>
+
+<Response tabs="200,400">
+  ```json
+  {
+    "is_valid": true,
+    "confidence": 1.0,
+    "explanation": "The equation 2 + 2 equals 4 is correct.",
+    "proof_steps": ["Addition: 2 + 2", "Result: 4"]
+  }
+  ```
+
+  ```json
+  {
+    "is_valid": false,
+    "error": "Invalid statement format"
+  }
+  ```
+</Response>
+
+#### Request Parameters
+
+<ParamField body="statement" param-type="string" required="true">
+Mathematical expression to verify, e.g., `{2 + 2 = 4}`.
+</ParamField>
+
+<ParamField body="context" param-type="string" required="false">
+Additional context for the proof.
+</ParamField>
+
+#### Response Fields
+
+<ResponseField name="is_valid" field-type="boolean" required="true">
+Whether the statement is verified.
+</ResponseField>
+
+<ResponseField name="confidence" field-type="number" required="true">
+Verification confidence score (0.0 to 1.0).
+</ResponseField>
+
+<ResponseField name="explanation" field-type="string">
+Human-readable proof explanation.
+</ResponseField>
+
+## Engine-Specific Functions
+
+<Tabs>
+  <Tab title="Logic" icon="git-branch">
+    Verify logical propositions.
+
+    <CodeGroup tabs="Python">
+      ```python
+      result = verifier.verify_logic(
+          premise="All humans are mortal",
+          conclusion="Socrates is mortal"
+      )
+      ```
+    </CodeGroup>
+
+    <ParamField body="premise" param-type="string" required="true">
+      Logical premise.
+    </ParamField>
+  </Tab>
+
+  <Tab title="Code" icon="code">
+    Check code correctness.
+
+    <CodeGroup tabs="Python">
+      ```python
+      result = verifier.verify_code(
+          language="python",
+          code="def add(a, b): return a + b"
+      )
+      ```
+    </CodeGroup>
+
+    <ParamField body="language" param-type="string" required="true">
+      `python`, `javascript`, etc.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Finance Verification APIs
+
+Verify financial computations.
+
+<Steps>
+  <Step title="Prepare Payload" icon="file-text">
+    Include formula and inputs.
+  </Step>
+  <Step title="Send Request">
+````python
+result = verifier.verify_finance(
+    formula="NPV = -1000 + 200/1.1 + 300/1.1^2",
+    inputs={"rate": 0.1, "cashflows": [-1000, 200, 300]}
+)
+````
+  </Step>
+  <Step title="Handle Response">
+    Check `is_valid` and `computed_value`.
+  </Step>
+</Steps>
+
+<Response tabs="200">
+  ```json
+  {
+    "is_valid": true,
+    "computed_value": 35.78,
+    "unit": "USD"
+  }
+  ```
+</Response>
+
+## Error Handling
+
+All API responses use standard HTTP status codes. Errors return JSON with `error` field.
+
+<Callout kind="alert">
+Handle `401 Unauthorized` by refreshing your API key. Retry `429 Rate Limit` after `Retry-After` seconds.
+</Callout>
+
+Common errors:
+
+| Code | Message              | Action                  |
+|------|----------------------|-------------------------|
+| 400  | Invalid statement   | Check payload format   |
+| 401  | Unauthorized        | Verify `Authorization` header |
+| 429  | Rate limit exceeded | Wait and retry         |
+| 500  | Internal server error | Contact support       |
+
+```python
+try:
+    result = verifier.verify_math("invalid")
+except APIError as e:
+    print(f"Error: {e.message}")  # e.g., "Invalid statement format"
+```
+
+<Expandable title="Advanced Error Codes" default-open="false">
+Detailed error codes in [full spec](/authentication#errors).
+</Expandable>

@@ -1,0 +1,151 @@
+---
+title: Basic Usage
+description: Learn how to integrate QWED-AI into your applications to verify LLM outputs with practical examples.
+---
+
+## Overview
+
+QWED-AI provides a simple API to verify LLM outputs deterministically. You create a verification instance, run checks on generated text, and handle results from various engines like statistics or dataframes. This guide walks you through the essentials with code examples.
+
+<Callout kind="info">
+  Install QWED-AI first via pip:
+  
+  ```
+  pip install qwed
+  ```
+</Callout>
+
+## Creating a Verification Instance
+
+Start by importing QWED-AI and initializing a verifier. Pass your configuration, such as the verification threshold or engine type.
+
+<Steps>
+  <Step title="Import the library" icon="package">
+    Add the import statement to your script.
+    
+````python
+from qwed import Verifier
+````
+  </Step>
+  <Step title="Initialize verifier" icon="settings">
+    Create an instance with options.
+    
+````python
+verifier = Verifier(
+    threshold=0.95,
+    engine="stats"
+)
+````
+  </Step>
+  <Step title="Configure options" icon="sliders">
+    Set additional parameters like timeout.
+    
+````python
+verifier.configure(timeout=30)
+````
+  </Step>
+</Steps>
+
+## Running Verifications
+
+Run verifications on LLM-generated text. QWED-AI supports multiple engines.
+
+<Tabs>
+  <Tab title="Statistics Engine" icon="bar-chart">
+    Verify statistical properties like mean or variance.
+    
+````python
+llm_output = "The average temperature is 25°C with variance 2.1."
+result = verifier.verify(llm_output, checks=["mean", "variance"])
+print(result.passed)  # True if checks pass
+````
+
+    <Callout kind="tip">
+      Use `checks` array to specify metrics: `["mean", "std", "min", "max"]`.
+    </Callout>
+  </Tab>
+  <Tab title="Dataframe Engine" icon="database">
+    Validate structured data outputs as dataframes.
+    
+````python
+llm_df_output = """
+Name,Age,Score
+Alice,30,95
+Bob,25,88
+"""
+result = verifier.verify_dataframe(llm_df_output)
+print(result.summary())  # Displays validation report
+````
+  </Tab>
+</Tabs>
+
+<Columns cols={2}>
+  <Card title="Supported Checks" icon="check-circle">
+    - Statistical: mean, std, correlations
+    - Dataframe: schema, nulls, duplicates
+  </Card>
+  <Card title="Result Object" icon="file-text">
+    Access `result.passed`, `result.errors`, `result.metrics`.
+  </Card>
+</Columns>
+
+## Integrating with LLM Frameworks
+
+QWED-AI integrates seamlessly with popular frameworks.
+
+<CodeGroup tabs="LangChain,OpenAI,LlamaIndex">
+````python
+# LangChain
+from langchain.llms import OpenAI
+llm = OpenAI()
+output = llm("Generate stats summary")
+verifier.verify(output)
+````
+````python
+# OpenAI
+import openai
+response = openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Summarize data"}]
+)
+verifier.verify(response.choices[0].message.content)
+````
+````python
+# LlamaIndex
+from llama_index import LLM
+llm = LLM(model="gpt-3.5-turbo")
+output = llm.complete("Analyze dataframe")
+verifier.verify_dataframe(str(output))
+````
+</CodeGroup>
+
+## Handling Results and Errors
+
+Always check the result object for detailed feedback.
+
+<Expandable title="Advanced Error Handling" default-open="false">
+  
+````python
+try:
+    result = verifier.verify(llm_output)
+    if not result.passed:
+        for error in result.errors:
+            print(f"Failed check: {error}")
+except VerificationError as e:
+    print(f"Verification failed: {e}")
+````
+
+  Use custom thresholds per check:
+  
+````python
+result = verifier.verify(llm_output, custom_thresholds={"mean": 0.9})
+````
+</Expandable>
+
+<Callout kind="tip">
+  For production, log results and retry on transient failures. Integrate with your observability tools for monitoring.
+</Callout>
+
+## Next Steps
+
+Explore advanced configurations in the [Configuration](/configuration) guide or check the [API Reference](/api-reference) for all methods. Start verifying your LLM outputs today!
