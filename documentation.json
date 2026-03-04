@@ -2,115 +2,593 @@
   "name": "QWED-AI",
   "colors": {
     "light": {
-      "brand": "#15D18C"
+      "brand": "#7C3AED"
     },
     "dark": {
-      "brand": "#61EAB8"
+      "brand": "#A78BFA"
     }
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
-        "icon": "book",
+        "tab": "Getting Started",
+        "icon": "rocket",
         "groups": [
           {
-            "group": "Getting Started",
-            "icon": "rocket",
+            "group": "Introduction",
+            "icon": "book-open",
             "pages": [
               {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
+                "title": "Introduction to QWED",
+                "path": "docs/intro"
               },
               {
-                "title": "Installation",
-                "path": "installation",
-                "icon": "play"
+                "title": "Architecture Overview",
+                "path": "docs/architecture"
+              },
+              {
+                "title": "FAQ",
+                "path": "docs/faq"
+              },
+              {
+                "title": "Whitepaper",
+                "path": "docs/whitepaper"
               }
             ]
           },
           {
-            "group": "Guides",
-            "icon": "compass",
+            "group": "Quick Start",
+            "icon": "play",
             "pages": [
               {
-                "title": "Usage",
-                "path": "usage",
-                "icon": "file-text"
+                "title": "Installation",
+                "path": "docs/getting-started/installation"
               },
               {
-                "title": "API Reference Overview",
-                "path": "api-reference",
-                "icon": "file-text"
+                "title": "Quick Start",
+                "path": "docs/getting-started/quickstart"
+              },
+              {
+                "title": "Core Concepts",
+                "path": "docs/getting-started/concepts"
+              },
+              {
+                "title": "LLM Configuration",
+                "path": "docs/getting-started/llm-configuration"
+              }
+            ]
+          },
+          {
+            "group": "Help",
+            "icon": "help-circle",
+            "pages": [
+              {
+                "title": "Troubleshooting",
+                "path": "docs/troubleshooting"
+              },
+              {
+                "title": "Support QWED",
+                "path": "docs/support"
               }
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Engines",
+        "icon": "cpu",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              {
+                "title": "Engines Overview",
+                "path": "docs/engines/overview"
+              }
+            ]
+          },
+          {
+            "group": "Core Engines",
+            "pages": [
+              {
+                "title": "Math Engine",
+                "path": "docs/engines/math"
+              },
+              {
+                "title": "Logic Engine",
+                "path": "docs/engines/logic"
+              },
+              {
+                "title": "Code Engine",
+                "path": "docs/engines/code"
+              },
+              {
+                "title": "SQL Engine",
+                "path": "docs/engines/sql"
+              },
+              {
+                "title": "Schema Engine",
+                "path": "docs/engines/schema"
+              }
+            ]
+          },
+          {
+            "group": "Analysis Engines",
+            "pages": [
+              {
+                "title": "Stats Engine",
+                "path": "docs/engines/stats"
+              },
+              {
+                "title": "Fact Engine",
+                "path": "docs/engines/fact"
+              },
+              {
+                "title": "Consensus Engine",
+                "path": "docs/engines/consensus"
+              },
+              {
+                "title": "Reasoning Engine",
+                "path": "docs/engines/reasoning"
+              }
+            ]
+          },
+          {
+            "group": "Specialized Engines",
+            "pages": [
+              {
+                "title": "Image Engine",
+                "path": "docs/engines/image"
+              },
+              {
+                "title": "Graph Engine",
+                "path": "docs/engines/graph"
+              },
+              {
+                "title": "Taint Engine",
+                "path": "docs/engines/taint"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Extensions",
+        "icon": "puzzle",
+        "groups": [
+          {
+            "group": "QWED Finance",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/finance/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/finance/guards"
+              },
+              {
+                "title": "Design",
+                "path": "docs/finance/design"
+              },
+              {
+                "title": "Compliance",
+                "path": "docs/finance/compliance"
+              },
+              {
+                "title": "Action",
+                "path": "docs/finance/action"
+              },
+              {
+                "title": "UCP Integration",
+                "path": "docs/finance/integrations/ucp"
+              },
+              {
+                "title": "Open Responses Integration",
+                "path": "docs/finance/integrations/open-responses"
+              }
+            ]
+          },
+          {
+            "group": "QWED Legal",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/legal/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/legal/guards"
+              },
+              {
+                "title": "Examples",
+                "path": "docs/legal/examples"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/legal/troubleshooting"
+              }
+            ]
+          },
+          {
+            "group": "QWED Tax",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/tax/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/tax/guards"
+              },
+              {
+                "title": "Integration",
+                "path": "docs/tax/integration"
+              }
+            ]
+          },
+          {
+            "group": "QWED Infra",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/infra/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/infra/guards"
+              },
+              {
+                "title": "Examples",
+                "path": "docs/infra/examples"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/infra/troubleshooting"
+              }
+            ]
+          },
+          {
+            "group": "MCP Server",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/mcp/overview"
+              },
+              {
+                "title": "Tools",
+                "path": "docs/mcp/tools"
+              },
+              {
+                "title": "Examples",
+                "path": "docs/mcp/examples"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/mcp/troubleshooting"
+              }
+            ]
+          },
+          {
+            "group": "Open Responses",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/open-responses/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/open-responses/guards"
+              },
+              {
+                "title": "OpenAI",
+                "path": "docs/open-responses/openai"
+              },
+              {
+                "title": "LangChain",
+                "path": "docs/open-responses/langchain"
+              },
+              {
+                "title": "Examples",
+                "path": "docs/open-responses/examples"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/open-responses/troubleshooting"
+              }
+            ]
+          },
+          {
+            "group": "UCP (Commerce)",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/ucp/overview"
+              },
+              {
+                "title": "Guards",
+                "path": "docs/ucp/guards"
+              },
+              {
+                "title": "Middleware FastAPI",
+                "path": "docs/ucp/middleware-fastapi"
+              },
+              {
+                "title": "Middleware Express",
+                "path": "docs/ucp/middleware-express"
+              },
+              {
+                "title": "Examples",
+                "path": "docs/ucp/examples"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/ucp/troubleshooting"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "icon": "link",
+        "groups": [
+          {
+            "group": "AI Frameworks",
+            "pages": [
+              {
+                "title": "LangChain",
+                "path": "docs/integrations/langchain"
+              },
+              {
+                "title": "LlamaIndex",
+                "path": "docs/integrations/llamaindex"
+              },
+              {
+                "title": "CrewAI",
+                "path": "docs/integrations/crewai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDKs & API",
         "icon": "code",
         "groups": [
           {
-            "group": "Endpoints",
-            "openapi": "api-reference/openapi.yaml",
-            "pages": []
+            "group": "API Reference",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/api/overview"
+              },
+              {
+                "title": "Authentication",
+                "path": "docs/api/authentication"
+              },
+              {
+                "title": "Endpoints",
+                "path": "docs/api/endpoints"
+              },
+              {
+                "title": "Errors",
+                "path": "docs/api/errors"
+              },
+              {
+                "title": "Rate Limits",
+                "path": "docs/api/rate-limits"
+              },
+              {
+                "title": "DSL Reference",
+                "path": "docs/api/dsl-reference"
+              }
+            ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/sdks/overview"
+              },
+              {
+                "title": "Python SDK",
+                "path": "docs/sdks/python"
+              },
+              {
+                "title": "TypeScript SDK",
+                "path": "docs/sdks/typescript"
+              },
+              {
+                "title": "Go SDK",
+                "path": "docs/sdks/go"
+              },
+              {
+                "title": "Rust SDK",
+                "path": "docs/sdks/rust"
+              }
+            ]
           }
         ]
       },
       {
-        "tab": "Help Center",
-        "icon": "help-circle",
-        "pages": [
+        "tab": "Guides",
+        "icon": "compass",
+        "groups": [
           {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
+            "group": "Integration Guide",
             "pages": [
               {
-                "title": "Getting Started with QWED-AI",
-                "path": "help-center/faq/getting-started-qwed-ai"
+                "title": "Getting Started",
+                "path": "docs/integration/getting-started"
+              },
+              {
+                "title": "Testing",
+                "path": "docs/integration/testing"
+              },
+              {
+                "title": "Production",
+                "path": "docs/integration/production"
+              },
+              {
+                "title": "Monitoring",
+                "path": "docs/integration/monitoring"
+              },
+              {
+                "title": "Common Pitfalls",
+                "path": "docs/integration/common-pitfalls"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "docs/integration/troubleshooting"
               }
             ]
           },
           {
-            "group": "Troubleshooting",
-            "icon": "alert-circle",
-            "expandable": false,
+            "group": "Deployment",
             "pages": [
               {
-                "title": "Cannot Load Projects",
-                "path": "help-center/troubleshooting/can-not-load-projects"
+                "title": "Deployment Guide",
+                "path": "docs/advanced/deployment"
+              },
+              {
+                "title": "Self Hosting",
+                "path": "docs/advanced/self-hosting"
+              },
+              {
+                "title": "QWED Local",
+                "path": "docs/advanced/qwed-local"
+              },
+              {
+                "title": "Ollama",
+                "path": "docs/advanced/ollama"
               }
             ]
           },
           {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
+            "group": "CI/CD",
             "pages": [
               {
-                "title": "Organize Documentation",
-                "path": "help-center/guides/organize-documentation"
+                "title": "CLI",
+                "path": "docs/advanced/cli"
+              },
+              {
+                "title": "GitHub Action",
+                "path": "docs/advanced/github-action"
+              },
+              {
+                "title": "GitHub App",
+                "path": "docs/advanced/github-app"
+              }
+            ]
+          },
+          {
+            "group": "Security & Compliance",
+            "pages": [
+              {
+                "title": "Security Hardening",
+                "path": "docs/advanced/security-hardening"
+              },
+              {
+                "title": "Compliance",
+                "path": "docs/advanced/compliance"
+              },
+              {
+                "title": "PII Masking",
+                "path": "docs/advanced/pii-masking"
+              },
+              {
+                "title": "Attestations",
+                "path": "docs/advanced/attestations"
               }
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
-        "icon": "clock",
-        "pages": [
+        "tab": "Reference",
+        "icon": "file-text",
+        "groups": [
           {
-            "title": "Release History",
-            "path": "changelog",
-            "icon": "history"
+            "group": "Architecture",
+            "pages": [
+              {
+                "title": "Architecture Diagrams",
+                "path": "docs/advanced/architecture-diagrams"
+              },
+              {
+                "title": "Neurosymbolic",
+                "path": "docs/advanced/neurosymbolic"
+              },
+              {
+                "title": "Determinism Guarantee",
+                "path": "docs/advanced/determinism-guarantee"
+              },
+              {
+                "title": "Symbolic Limits",
+                "path": "docs/advanced/symbolic-limits"
+              },
+              {
+                "title": "Design",
+                "path": "docs/advanced/design"
+              }
+            ]
+          },
+          {
+            "group": "Concepts",
+            "pages": [
+              {
+                "title": "Why Cloud LLMs",
+                "path": "docs/advanced/why-cloud-llms"
+              },
+              {
+                "title": "Comparison",
+                "path": "docs/advanced/comparison"
+              },
+              {
+                "title": "Performance Benchmarks",
+                "path": "docs/advanced/performance-benchmarks"
+              },
+              {
+                "title": "Agent Verification",
+                "path": "docs/advanced/agent-verification"
+              }
+            ]
+          },
+          {
+            "group": "Specifications",
+            "pages": [
+              {
+                "title": "Specs Overview",
+                "path": "docs/specs/overview"
+              },
+              {
+                "title": "QWED Spec",
+                "path": "docs/specs/qwed-spec"
+              },
+              {
+                "title": "Attestation",
+                "path": "docs/specs/attestation"
+              },
+              {
+                "title": "Agent Spec",
+                "path": "docs/specs/agent"
+              },
+              {
+                "title": "Specification Guide",
+                "path": "docs/advanced/specification-guide"
+              }
+            ]
+          },
+          {
+            "group": "Contributing",
+            "pages": [
+              {
+                "title": "Contributor Onboarding",
+                "path": "docs/advanced/contributor-onboarding"
+              }
+            ]
           }
         ]
       }
