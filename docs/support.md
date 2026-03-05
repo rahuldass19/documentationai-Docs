@@ -1,11 +1,8 @@
 ---
-sidebar_position: 11
-title: Support QWED
+title: "\U0001F496 Support QWED Development"
 description: Support open-source AI verification infrastructure development
+sidebar_position: 11
 ---
-
-# 💖 Support QWED Development
-
 QWED is **100% open-source** and free to use. Your support helps make AI verification infrastructure sustainable.
 
 ---
@@ -15,23 +12,35 @@ QWED is **100% open-source** and free to use. Your support helps make AI verific
 **I'm Rahul Dass**, creator and full-time maintainer of QWED. Your sponsorship enables:
 
 ### 🚀 **Faster Development**
+
 - Weekly feature releases (instead of monthly)
+
 - Priority bug fixes
+
 - Enterprise-grade features
 
 ### 📚 **Better Documentation**
+
 - Comprehensive guides
+
 - Video tutorials
+
 - Live workshops
 
 ### 💬 **Dedicated Support**
+
 - Email & chat support
+
 - Production deployment help
+
 - Custom integration assistance
 
 ### 🔧 **Infrastructure**
+
 - MongoDB Atlas ($500/mo from startup credits)
+
 - Cloud hosting & CI/CD
+
 - LLM API costs for testing
 
 ---
@@ -40,7 +49,7 @@ QWED is **100% open-source** and free to use. Your support helps make AI verific
 
 This covers living expenses and infrastructure costs, allowing full-time work on QWED.
 
-**[View Sponsorship Progress →](https://github.com/sponsors/rahuldass19)**
+[**View Sponsorship Progress →**](https://github.com/sponsors/rahuldass19)
 
 ---
 
@@ -51,12 +60,16 @@ This covers living expenses and infrastructure costs, allowing full-time work on
 Perfect for individual developers.
 
 **Benefits:**
+
 - ✅ Sponsor badge on your profile
+
 - ✅ Name in CONTRIBUTORS.md
+
 - ✅ Early feature announcements
+
 - ✅ Access to sponsors-only discussions
 
-**[💖 Sponsor $5/month →](https://github.com/sponsors/rahuldass19?frequency=recurring&sponsor=rahuldass19&tier_id=389851)**
+[**💖 Sponsor $5/month →**](https://github.com/sponsors/rahuldass19?frequency=recurring\&sponsor=rahuldass19\&tier_id=389851)
 
 ---
 
@@ -65,14 +78,20 @@ Perfect for individual developers.
 For developers using QWED in production.
 
 **Benefits:**
+
 - ✅ Everything in Supporter
+
 - ✅ Priority bug fixes (48hr SLA)
+
 - ✅ Email support
+
 - ✅ Feature request priority
+
 - ✅ Monthly dev updates newsletter
+
 - ✅ Name prominently in README
 
-**[💖 Sponsor $25/month →](https://github.com/sponsors/rahuldass19?frequency=recurring&sponsor=rahuldass19&tier_id=389852)**
+[**💖 Sponsor $25/month →**](https://github.com/sponsors/rahuldass19?frequency=recurring\&sponsor=rahuldass19\&tier_id=389852)
 
 ---
 
@@ -81,15 +100,22 @@ For developers using QWED in production.
 For companies deploying QWED.
 
 **Benefits:**
+
 - ✅ Everything in Power User
+
 - ✅ Direct Slack/Discord support
+
 - ✅ Production deployment consulting (2 hrs/month)
+
 - ✅ MongoDB analytics dashboard access
+
 - ✅ Custom integration help
+
 - ✅ Company logo in README & docs
+
 - ✅ Early enterprise features
 
-**[💖 Sponsor $100/month →](https://github.com/sponsors/rahuldass19?frequency=recurring&sponsor=rahuldass19&tier_id=389853)**
+[**💖 Sponsor $100/month →**](https://github.com/sponsors/rahuldass19?frequency=recurring\&sponsor=rahuldass19\&tier_id=389853)
 
 ---
 
@@ -98,27 +124,38 @@ For companies deploying QWED.
 Maximum support for mission-critical deployments.
 
 **Benefits:**
+
 - ✅ Everything in Enterprise Sponsor
+
 - ✅ **Dedicated MongoDB instance**
+
 - ✅ 24/7 support with SLA (1-hour response)
+
 - ✅ Custom feature development (10 hrs/month)
+
 - ✅ White-label deployment
+
 - ✅ Security audit assistance
+
 - ✅ Production monitoring setup
+
 - ✅ Quarterly architecture review
 
-**[💖 Sponsor $500/month →](https://github.com/sponsors/rahuldass19?frequency=recurring&sponsor=rahuldass19&tier_id=389854)**
+[**💖 Sponsor $500/month →**](https://github.com/sponsors/rahuldass19?frequency=recurring\&sponsor=rahuldass19\&tier_id=389854)
 
 ---
 
 ## 🏢 Corporate Sponsorship
 
 **For companies:** Sponsorship is far cheaper than:
+
 - Hiring an AI safety engineer ($150k+/year)
+
 - One production hallucination ($600+ average incident cost)
+
 - Building verification infrastructure in-house (months)
 
-**Enterprise invoicing available.** Contact: support@qwedai.com
+**Enterprise invoicing available.** Contact: [support@qwedai.com](mailto:support@qwedai.com)
 
 ---
 
@@ -127,24 +164,33 @@ Maximum support for mission-critical deployments.
 Not ready for monthly commitment? One-time sponsorships also help!
 
 - ☕ **$10** - Buy me a coffee
+
 - 🛠️ **$200** - 1-hour integration session
+
 - 🚀 **$1,000** - Production deployment package
 
-**[💰 One-time Sponsorship →](https://github.com/sponsors/rahuldass19?frequency=one-time)**
+[**💰 One-time Sponsorship →**](https://github.com/sponsors/rahuldass19?frequency=one-time)
 
 ---
 
 ## 📊 Transparency
 
 **Monthly public updates on:**
+
 - Development progress
+
 - Financial breakdown
+
 - Sponsor impact
+
 - Roadmap decisions
 
 **Current Status:**
+
 - 💼 Working part-time (20 hrs/week) + freelancing
+
 - 🎯 Goal: Full-time QWED development
+
 - 📦 2,800+ GitHub stars, published on PyPI & npm
 
 ---
@@ -153,9 +199,7 @@ Not ready for monthly commitment? One-time sponsorships also help!
 
 Thank you to our amazing sponsors! You make QWED possible.
 
-<!-- sponsors -->
 Become our first sponsor!
-<!-- sponsors -->
 
 ---
 
@@ -182,8 +226,10 @@ Become our first sponsor!
 Every sponsorship, big or small, makes a real difference. You're not just supporting code - you're enabling open-source AI safety infrastructure for the entire community.
 
 **Questions?** Reach out anytime:
-- 📧 Email: support@qwedai.com
+
+- 📧 Email: [support@qwedai.com](mailto:support@qwedai.com)
+
 - 💬 Discussions: [GitHub Discussions](https://github.com/QWED-AI/qwed-verification/discussions)
 
-— **Rahul Dass**  
+— **Rahul Dass**\
 Creator & Maintainer, QWED
