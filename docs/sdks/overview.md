@@ -15,7 +15,7 @@ QWED provides official SDKs for 4 languages.
 | [Go](/docs/sdks/go) | `github.com/qwed-ai/qwed-go` | ✅ Stable |
 | [Rust](/docs/sdks/rust) | `qwed` | ✅ Stable |
 
-## Feature Comparison
+## Feature comparison
 
 | Feature | Python | TypeScript | Go | Rust |
 |---------|--------|------------|---------|------|
@@ -26,7 +26,7 @@ QWED provides official SDKs for 4 languages.
 | Attestations | ✅ | ✅ | ✅ | ✅ |
 | CLI | ✅ | ❌ | ❌ | ❌ |
 
-## Quick Install
+## Quick install
 
 ```bash
 # Python
@@ -42,13 +42,11 @@ go get github.com/qwed-ai/qwed-go
 cargo add qwed
 ```
 
-## Minimal Example
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+## Minimal example
 
 <Tabs>
-<TabItem value="python" label="Python">
+
+<Tab title="Python">
 
 ```python
 from qwed_sdk import QWEDClient
@@ -58,8 +56,9 @@ result = client.verify("2+2=4")
 print(result.verified)  # True
 ```
 
-</TabItem>
-<TabItem value="typescript" label="TypeScript">
+</Tab>
+
+<Tab title="TypeScript">
 
 ```typescript
 import { QWEDClient } from '@qwed-ai/sdk';
@@ -69,8 +68,9 @@ const result = await client.verify('2+2=4');
 console.log(result.verified);  // true
 ```
 
-</TabItem>
-<TabItem value="go" label="Go">
+</Tab>
+
+<Tab title="Go">
 
 ```go
 client := qwed.NewClient("qwed_...")
@@ -78,8 +78,9 @@ result, _ := client.Verify(ctx, "2+2=4")
 fmt.Println(result.Verified)  // true
 ```
 
-</TabItem>
-<TabItem value="rust" label="Rust">
+</Tab>
+
+<Tab title="Rust">
 
 ```rust
 let client = QWEDClient::new("qwed_...");
@@ -87,6 +88,6 @@ let result = client.verify("2+2=4").await?;
 println!("{}", result.verified);  // true
 ```
 
-</TabItem>
-</Tabs>
+</Tab>
 
+</Tabs>
