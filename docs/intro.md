@@ -1,7 +1,7 @@
 ---
+title: Introduction to QWED
 sidebar_position: 1
 ---
-
 # Introduction to QWED
 
 **QWED** (Query With Evidence & Determinism) is a **model-agnostic verification protocol** for Large Language Models.
@@ -20,18 +20,20 @@ QWED works with **ANY LLM** - OpenAI, Anthropic, Gemini, Llama (via Ollama), or 
 
 Choose your LLM based on your needs:
 
-| Tier | Monthly Cost | LLM Options | Best For |
-|------|-------------|-------------|----------|
-| **Local** | $0 | Ollama (Llama, Mistral, Phi) | Students, Privacy-focused |
-| **Budget** | ~$5-10 | GPT-4o-mini, Gemini Flash | Startups, Prototypes |
-| **Premium** | ~$50-100 | GPT-4, Claude Opus | Enterprises, Production |
+| Tier        | Monthly Cost | LLM Options                  | Best For                  |
+| ----------- | ------------ | ---------------------------- | ------------------------- |
+| **Local**   | $0           | Ollama (Llama, Mistral, Phi) | Students, Privacy-focused |
+| **Budget**  | \~$5-10      | GPT-4o-mini, Gemini Flash    | Startups, Prototypes      |
+| **Premium** | \~$50-100    | GPT-4, Claude Opus           | Enterprises, Production   |
 
 **Same verification quality, your choice of cost.**
 
 ### Privacy & Compliance
 
 - **Local LLMs** = Data never leaves your infrastructure
+
 - Perfect for: Healthcare (HIPAA), Finance (PCI-DSS), Government
+
 - Run on-premise, maintain full control
 
 ---
@@ -54,12 +56,12 @@ Choose your LLM based on your needs:
 
 ## Why QWED?
 
-| Problem | QWED Solution |
-|---------|---------------|
-| LLMs hallucinate math | Symbolic verification with SymPy |
-| LLMs break logic | SAT solving with Z3 |
-| LLMs generate unsafe code | AST analysis + pattern detection |
-| LLMs produce SQL injection | Query parsing + validation |
+| Problem                    | QWED Solution                    |
+| -------------------------- | -------------------------------- |
+| LLMs hallucinate math      | Symbolic verification with SymPy |
+| LLMs break logic           | SAT solving with Z3              |
+| LLMs generate unsafe code  | AST analysis + pattern detection |
+| LLMs produce SQL injection | Query parsing + validation       |
 
 ## Quick Start
 
@@ -79,9 +81,13 @@ qwed verify-logic "(AND (GT x 5) (LT y 10))"
 ## Features
 
 - **11 Verification Engines** — Math, Logic, Reasoning, Stats, Fact, Graph Fact, Code, SQL, Taint, Image, Schema
+
 - **4 SDKs** — Python, TypeScript, Go, Rust
+
 - **3 Framework Integrations** — LangChain, LlamaIndex, CrewAI
+
 - **Cryptographic Attestations** — JWT-based verification proofs
+
 - **Agent Verification** — Pre-execution checks for AI agents
 
 ## 🆕 What's New in v3.0.1: Ironclad Update
@@ -89,19 +95,26 @@ qwed verify-logic "(AND (GT x 5) (LT y 10))"
 The **v3.0.1 Ironclad Release** focuses on **Security Hardening** and **Enterprise Compliance**.
 
 ### 🛡️ Critical Security Hardening
+
 - **CodeQL Remediation**: Resolved 50+ security alerts including ReDoS, Clear-text Logging, and Exception Exposure.
-- **Workflow Lockdown**: Enforced **Least Privilege (`permissions: contents: read`)** across all CI/CD pipelines.
+
+- **Workflow Lockdown**: Enforced **Least Privilege (****`permissions: contents: read`****)** across all CI/CD pipelines.
+
 - **PII Protection**: Implemented robust `redact_pii` logic in all API endpoints and exception handlers.
 
 ### 📝 Compliance & Governance
+
 - **Snyk Partner Program**: Official Snyk attribution added for secured dependencies.
+
 - **Advanced CodeQL**: Upgraded security scanning to Advanced mode (Python, Go, TS, Rust).
 
 ## Next Steps
 
 - [Installation Guide](/docs/getting-started/installation)
-- [Quick Start Tutorial](/docs/getting-started/quickstart)
-- [SDK Documentation](/docs/sdks/overview)
-- [Protocol Specifications](/docs/specs/overview)
 
+- [Quick Start Tutorial](/docs/getting-started/quickstart)
+
+- [SDK Documentation](/docs/sdks/overview)
+
+- [Protocol Specifications](/docs/specs/overview)
 
