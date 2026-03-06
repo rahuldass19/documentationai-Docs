@@ -58,11 +58,8 @@ cp .env.example .env
 
 Edit `.env` and add your API key for ONE provider:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
-  <TabItem value="openai" label="OpenAI" default>
+  <Tab title="OpenAI">
 
 ```bash
 # .env
@@ -72,8 +69,8 @@ OPENAI_API_KEY=sk-proj-...
 
 **Get API Key:** https://platform.openai.com/api-keys
 
-  </TabItem>
-  <TabItem value="anthropic" label="Anthropic Claude">
+  </Tab>
+  <Tab title="Anthropic Claude">
 
 ```bash
 # .env
@@ -83,8 +80,8 @@ ANTHROPIC_API_KEY=sk-ant-api03-...
 
 **Get API Key:** https://console.anthropic.com
 
-  </TabItem>
-  <TabItem value="azure" label="Azure OpenAI">
+  </Tab>
+  <Tab title="Azure OpenAI">
 
 ```bash
 # .env
@@ -97,8 +94,8 @@ AZURE_OPENAI_API_VERSION=2024-02-01
 
 **Get Credentials:** https://portal.azure.com → Azure OpenAI Service
 
-  </TabItem>
-  <TabItem value="gemini" label="Google Gemini">
+  </Tab>
+  <Tab title="Google Gemini">
 
 ```bash
 # .env
@@ -108,7 +105,7 @@ GOOGLE_API_KEY=AIzaSy...
 
 **Get API Key:** https://makersuite.google.com/app/apikey
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 :::tip See Full Configuration Guide
@@ -135,28 +132,28 @@ python -m qwed_api
 
 In a **new terminal**, install the QWED SDK in your project:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<Tabs>
+  <Tab title="Python">
 
 ```bash
 pip install qwed
 ```
 
-  </TabItem>
-  <TabItem value="typescript" label="TypeScript">
+  </Tab>
+  <Tab title="TypeScript">
 
 ```bash
 npm install @qwed-ai/sdk
 ```
 
-  </TabItem>
-  <TabItem value="go" label="Go">
+  </Tab>
+  <Tab title="Go">
 
 ```bash
 go get github.com/qwed-ai/qwed-go
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 ---
@@ -165,8 +162,8 @@ go get github.com/qwed-ai/qwed-go
 
 Connect your application to the local QWED backend:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<Tabs>
+  <Tab title="Python">
 
 ```python
 from qwed import QWEDClient
@@ -184,8 +181,8 @@ print(result.verified)  # True
 print(result.evidence)  # {"calculated": 4, "claimed": 4}
 ```
 
-  </TabItem>
-  <TabItem value="typescript" label="TypeScript">
+  </Tab>
+  <Tab title="TypeScript">
 
 ```typescript
 import { QWEDClient } from '@qwed-ai/sdk';
@@ -203,8 +200,8 @@ console.log(result.verified);  // true
 console.log(result.evidence);  // {calculated: 4, claimed: 4}
 ```
 
-  </TabItem>
-  <TabItem value="go" label="Go">
+  </Tab>
+  <Tab title="Go">
 
 ```go
 package main
@@ -227,7 +224,7 @@ func main() {
 }
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 ---
@@ -236,8 +233,8 @@ func main() {
 
 Run this test to ensure everything is working:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<Tabs>
+  <Tab title="Python">
 
 ```python
 from qwed import QWEDClient
@@ -263,8 +260,8 @@ print("✅ Security detection works!")
 print("\n🎉 QWED is working correctly!")
 ```
 
-  </TabItem>
-  <TabItem value="typescript" label="TypeScript">
+  </Tab>
+  <Tab title="TypeScript">
 
 ```typescript
 import { QWEDClient } from '@qwed-ai/sdk';
@@ -296,7 +293,7 @@ async function testIntegration() {
 testIntegration();
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 ---
