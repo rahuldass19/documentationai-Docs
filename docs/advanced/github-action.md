@@ -82,7 +82,7 @@ jobs:
 
 ### Check Code Security
 
-```yaml
+````yaml
 - name: Security Check
   uses: QWED-AI/qwed-verification@v2.2.0
   with:
@@ -92,7 +92,7 @@ jobs:
       eval(user_input)
       ```
     verification-type: "code"
-```
+````
 
 ### Enterprise: PII Masking
 
