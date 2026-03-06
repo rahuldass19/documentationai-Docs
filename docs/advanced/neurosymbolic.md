@@ -147,14 +147,14 @@ GPT: "Investment return = 12.5%"
 ### Code Security Example:
 
 **Old Way:**
-```
+````
 GPT: "Here's the code"
 ```python
 eval(user_input)  # Dangerous!
 ```
 → No check
 → 🔓 Security breach
-```
+````
 
 **QWED Way:**
 ```
